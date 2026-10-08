@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Manu Ceylon Herbs - Interactive Functionality
  * Handles Carousel, Filters, Modals, Live Clinic Status, Map Switching, and WhatsApp Concierge
  */
@@ -313,7 +313,7 @@ function initQuickViewModal() {
       // WhatsApp direct inquiry link
       const waBtn = document.getElementById('qvWhatsAppBtn');
       const waMessage = encodeURIComponent(`Hello Manu Ceylon Herbs! I would like to inquire and place an order for: ${data.title}. Please provide pricing and availability.`);
-      waBtn.href = `https://wa.me/94741837868?text=${waMessage}`;
+      waBtn.href = `https://wa.me/94711017868?text=${waMessage}`;
 
       openModal(modal);
     });
@@ -396,7 +396,7 @@ function initBookingModal() {
 
       const sendWaBtn = document.getElementById('sendBookingWhatsApp');
       if (sendWaBtn) {
-        sendWaBtn.href = `https://wa.me/94743607868?text=${waMsg}`;
+        sendWaBtn.href = `https://wa.me/94711017868?text=${waMsg}`;
       }
     });
   }
@@ -558,7 +558,7 @@ function initContactForm() {
           `• Subject/Interest: ${service}\n` +
           `• Message: ${message}`
         );
-        waBackupBtn.href = `https://wa.me/94741837868?text=${text}`;
+        waBackupBtn.href = `https://wa.me/94711017868?text=${text}`;
       }
     }
   });
