@@ -3,6 +3,16 @@
  * Handles Carousel, Filters, Modals, Live Clinic Status, Map Switching, and WhatsApp Concierge
  */
 
+// Helper for reliable multi-language controller access
+function getActiveLanguage() {
+  const i18n = (typeof window !== 'undefined' && window.AppI18n) || (typeof AppI18n !== 'undefined' ? AppI18n : null);
+  return (i18n && i18n.getLanguage()) || 'en';
+}
+
+function getActiveI18n() {
+  return (typeof window !== 'undefined' && window.AppI18n) || (typeof AppI18n !== 'undefined' ? AppI18n : null);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initCarousel();
   initProductFilter();
@@ -119,128 +129,19 @@ function initCarousel() {
 /* ==========================================================================
    2. Product Catalog Data & Category Filtering
    ========================================================================== */
-const productsData = {
-  'hair-oil': {
-    title: 'Murdhini Hair Oil',
-    subtitle: 'Signature Ayurvedic Hair Elixir',
-    category: 'hair',
-    categoryName: 'Hair Care',
-    image: 'assets/images/hair-oil.webp',
-    desc: 'Crafted with an authentic heritage formula enriched with 43+ rare indigenous herbs and medicated botanical oils. Penetrates deeply to fortify hair roots, soothe itchy scalp, and stimulate lush healthy growth.',
-    benefits: [
-      'Enriched with 43+ hand-selected Ayurvedic herbs',
-      'Significantly reduces hair fall and strengthens root follicles',
-      'Combats stubborn dandruff and flakiness',
-      'Prevents pre-mature hair greying with cooling botanicals'
-    ],
-    usage: 'Warm a small amount between your palms. Gently massage into scalp and hair lengths in circular motions. Leave for at least 1 hour or overnight before washing.'
-  },
-  'shampoo-conditioner': {
-    title: 'Herbal Shampoo & Conditioner',
-    subtitle: 'Nourishing Dual Botanic Care',
-    category: 'hair',
-    categoryName: 'Hair Care',
-    image: 'assets/images/shampoo-and-conditioner.jpg',
-    desc: 'A gentle, sulfate-free botanical formulation designed for all hair types. Infused with Ceylon herbal cleansers that purify without stripping natural essential oils.',
-    benefits: [
-      'Gentle daily scalp detox and purification',
-      'Deeply conditions strands to reduce dryness and frizz',
-      'Natural herbal anti-fungal properties eliminate dandruff',
-      'Leaves hair silky, voluminous, and subtly scented'
-    ],
-    usage: 'Apply to wet hair, lather gently into scalp and rinse thoroughly. For best results, pair with Murdhini Hair Oil.'
-  },
-  'body-lotion': {
-    title: 'Ayurvedic Body Lotion',
-    subtitle: 'Cellular Radiance & Sun Soother',
-    category: 'skin',
-    categoryName: 'Skin Care',
-    image: 'assets/images/body-lotion.jpg',
-    desc: 'Enriched with therapeutic herbal extracts that replenish lost moisture, calm sun-exposed skin, and restore healthy epidermal radiance.',
-    benefits: [
-      'Soothes sunburned, peeling, or irritated skin',
-      'Delivers 24-hour velvety moisture without greasiness',
-      'Enhances natural complexion luminosity and tone',
-      'Packed with natural antioxidants against environmental stressors'
-    ],
-    usage: 'Smooth generously over cleansed body skin morning and evening, paying special attention to dry areas like elbows, knees, and shoulders.'
-  },
-  'day-night-cream': {
-    title: 'Day & Night Facial Cream',
-    subtitle: 'Luxurious Regenerative Face Elixir',
-    category: 'skin',
-    categoryName: 'Skin Care',
-    image: 'assets/images/day-night-cream.jpg',
-    desc: 'An exquisite 24-hour facial cream infused with precious Ceylon herbs. Protects and balances skin during the day while delivering cellular restorative therapy overnight.',
-    benefits: [
-      'Deeply hydrates and restores epidermal barrier moisture',
-      'Softens fine expression lines and improves suppleness',
-      'Fades dullness and evens out skin tone',
-      'Lightweight, fast-absorbing texture suitable for all skin types'
-    ],
-    usage: 'Dot onto cleansed face and neck morning and night. Smooth in upward gentle motions until completely absorbed.'
-  },
-  'pimple-cream': {
-    title: 'Pimple & Blemish Cream',
-    subtitle: 'Targeted Herbal Acne Purifier',
-    category: 'skin',
-    categoryName: 'Skin Care',
-    image: 'assets/images/pimple-cream.jpg',
-    desc: 'A potent Ayurvedic targeted treatment specifically formulated for acne-prone skin. Clarifies congested pores, curbs excess sebum, and heals existing blemishes gently.',
-    benefits: [
-      'Rapidly reduces inflammation and redness of breakouts',
-      'Balances sebum production without drying skin',
-      'Prevents post-acne dark marks and hyperpigmentation',
-      'Contains natural antibacterial and antiseptic herbal extracts'
-    ],
-    usage: 'Apply directly onto clean affected areas or pimples twice daily until skin clears.'
-  },
-  'herbal-soap': {
-    title: 'Artisanal Herbal Soap Collection',
-    subtitle: 'Pure Botanic Bar Cleansers',
-    category: 'skin',
-    categoryName: 'Skin Care',
-    image: 'assets/images/soap.webp',
-    desc: 'Handcrafted cold-processed soaps made with pure botanical oils and traditional herbs including Neem, Ubtan, Saffron, and Activated Bamboo Charcoal.',
-    benefits: [
-      'Neem Soap: Clears active acne and soothes sensitive skin',
-      'Ubtan Soap: Gently exfoliates and lightens underarm darkness',
-      'Saffron Soap: Imparts an opulent glowing complexion',
-      'Charcoal Soap: Purifies pores and eliminates deep pollutants'
-    ],
-    usage: 'Work into a creamy rich lather with water. Gently massage over face and body, then rinse clean.'
-  },
-  'beard-oil': {
-    title: 'Herbal Beard Oil',
-    subtitle: 'Follicle Nourishment & Conditioning',
-    category: 'grooming',
-    categoryName: 'Grooming & Lips',
-    image: 'assets/images/beard-oil.webp',
-    desc: 'A tailored botanical conditioning blend designed for men who appreciate authentic herbal care. Nourishes facial hair follicles, tames coarse texture, and supports healthy density.',
-    benefits: [
-      'Stimulates even beard growth and fills patchy areas',
-      'Softens coarse whiskers and relieves beard itch',
-      'Slows down premature facial hair greying',
-      'Gives a polished, healthy sheen without oily residue'
-    ],
-    usage: 'Dispense 3 to 5 drops into palms and work evenly through clean beard from roots to tips.'
-  },
-  'lip-balm-scrub': {
-    title: 'Lip Balm & Exfoliating Scrub',
-    subtitle: 'Herbal Secret for Rosy Soft Lips',
-    category: 'grooming',
-    categoryName: 'Grooming & Lips',
-    image: 'assets/images/lip-balm-scrub.jpg',
-    desc: 'A complete dual herbal lip treatment. The gentle sugar-botanic scrub buffs away dead dry flakes, while the rich balm locks in moisture and revives natural pink radiance.',
-    benefits: [
-      'Removes stubborn dryness, flakiness, and chapping',
-      'Reverses smoker darkening and sun pigmentation',
-      'Infused with pure beeswax and herbal extracts',
-      'Keeps lips plump, supple, and naturally tinted'
-    ],
-    usage: 'Use scrub 2 to 3 times weekly with gentle circular finger rubbing. Apply lip balm daily as needed.'
+function getProductData(productId) {
+  const i18n = (typeof window !== 'undefined' && window.AppI18n) || (typeof AppI18n !== 'undefined' ? AppI18n : null);
+  const lang = (i18n && i18n.getLanguage()) || 'en';
+  const pI18n = (typeof window !== 'undefined' && window.productsI18n) || (typeof productsI18n !== 'undefined' ? productsI18n : null);
+  if (pI18n && pI18n[lang] && pI18n[lang][productId]) {
+    return pI18n[lang][productId];
   }
-};
+  if (pI18n && pI18n.en && pI18n.en[productId]) {
+    return pI18n.en[productId];
+  }
+  return null;
+}
+
 
 function initProductFilter() {
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -279,8 +180,10 @@ function initQuickViewModal() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const productId = btn.dataset.productId;
-      const data = productsData[productId];
+      const data = getProductData(productId);
       if (!data) return;
+
+      const lang = getActiveLanguage();
 
       document.getElementById('qvCategory').textContent = data.categoryName;
       document.getElementById('qvTitle').textContent = data.title;
@@ -310,10 +213,12 @@ function initQuickViewModal() {
 
       document.getElementById('qvUsage').textContent = data.usage;
 
-      // WhatsApp direct inquiry link
+      // WhatsApp direct inquiry link in active language
       const waBtn = document.getElementById('qvWhatsAppBtn');
-      const waMessage = encodeURIComponent(`Hello Manu Ceylon Herbs! I would like to inquire and place an order for: ${data.title}. Please provide pricing and availability.`);
-      waBtn.href = `https://wa.me/94711017868?text=${waMessage}`;
+      const waMsgText = lang === 'si'
+        ? `ආයුබෝවන් මනූ සිලෝන් හර්බ්ස්! මට ${data.title} නිෂ්පාදනය පිළිබඳව විමසීමට සහ ඇණවුම් කිරීමට අවශ්‍යයි. කරුණාකර මිල ගණන් සහ ලබාගත හැකි ආකාරය දන්වන්න.`
+        : `Hello Manu Ceylon Herbs! I would like to inquire and place an order for: ${data.title}. Please provide pricing and availability.`;
+      waBtn.href = `https://wa.me/94711017868?text=${encodeURIComponent(waMsgText)}`;
 
       openModal(modal);
     });
@@ -377,18 +282,25 @@ function initBookingModal() {
       const name = document.getElementById('bookName').value;
       const phone = document.getElementById('bookPhone').value;
       const date = document.getElementById('bookDate').value;
-      const treatment = document.getElementById('bookTreatmentSelect').value;
+      const treatmentSelectEl = document.getElementById('bookTreatmentSelect');
+      const treatment = treatmentSelectEl ? (treatmentSelectEl.options[treatmentSelectEl.selectedIndex]?.text || treatmentSelectEl.value) : '';
       const notes = document.getElementById('bookNotes').value;
+      const lang = getActiveLanguage();
 
-      // WhatsApp reservation dispatch
-      const waMsg = encodeURIComponent(
-        `*New Appointment Request - Medhini Ayurveda*\n` +
-        `• Name: ${name}\n` +
-        `• Phone: ${phone}\n` +
-        `• Requested Treatment: ${treatment}\n` +
-        `• Preferred Date: ${date}\n` +
-        `• Patient Notes: ${notes || 'None'}`
-      );
+      // WhatsApp reservation dispatch in active language
+      const waMsgText = lang === 'si'
+        ? `*නව සායන හමුවක් වෙන්කිරීම - මේදිනී ආයුර්වේදය*\n` +
+          `• රෝගියාගේ නම: ${name}\n` +
+          `• දුරකථනය: ${phone}\n` +
+          `• අවශ්‍ය ප්‍රතිකාරය: ${treatment}\n` +
+          `• කැමති දිනය: ${date}\n` +
+          `• සටහන්: ${notes || 'නැත'}`
+        : `*New Appointment Request - Medhini Ayurveda*\n` +
+          `• Name: ${name}\n` +
+          `• Phone: ${phone}\n` +
+          `• Requested Treatment: ${treatment}\n` +
+          `• Preferred Date: ${date}\n` +
+          `• Patient Notes: ${notes || 'None'}`;
 
       const confirmDiv = document.getElementById('bookingConfirmation');
       confirmDiv.style.display = 'block';
@@ -396,7 +308,7 @@ function initBookingModal() {
 
       const sendWaBtn = document.getElementById('sendBookingWhatsApp');
       if (sendWaBtn) {
-        sendWaBtn.href = `https://wa.me/94711017868?text=${waMsg}`;
+        sendWaBtn.href = `https://wa.me/94711017868?text=${encodeURIComponent(waMsgText)}`;
       }
     });
   }
@@ -432,29 +344,42 @@ function initClinicStatus() {
   const isOpenDay = (day === 0 || day >= 3);
   const isOpenTime = (currentTimeDec >= 9.0 && currentTimeDec < 18.0);
 
-  let statusText = '';
+  let statusKey = '';
   let isOpen = false;
 
   if (isOpenDay && isOpenTime) {
-    statusText = 'Clinic Open Today (Until 6:00 PM)';
+    statusKey = 'status.openNow';
     isOpen = true;
   } else if (isOpenDay && currentTimeDec < 9.0) {
-    statusText = 'Opens Today at 9:00 AM';
+    statusKey = 'status.opensToday';
   } else if (day === 1) {
-    statusText = 'Closed on Mondays & Tuesdays - Reopens Wednesday';
+    statusKey = 'status.closedMonday';
   } else if (day === 2) {
-    statusText = 'Open Tomorrow (Wednesday 9:00 AM)';
+    statusKey = 'status.openTomorrow';
   } else {
-    statusText = 'Closed for the Day - Next Clinic: 9:00 AM';
+    statusKey = 'status.closedForDay';
   }
+
+  const i18n = (typeof window !== 'undefined' && window.AppI18n) || (typeof AppI18n !== 'undefined' ? AppI18n : null);
+  const statusText = (i18n && i18n.t(statusKey)) || statusKey;
 
   statusBadges.forEach(badge => {
     badge.innerHTML = `
       <span class="status-indicator" style="background-color: ${isOpen ? '#22c55e' : '#eab308'}; box-shadow: 0 0 8px ${isOpen ? '#22c55e' : '#eab308'};"></span>
-      <span>${statusText}</span>
+      <span class="clinic-status-label" data-i18n="${statusKey}">${statusText}</span>
     `;
   });
 }
+
+// Expose on window so AppI18n can trigger status re-calculation
+if (typeof window !== 'undefined') {
+  window.initClinicStatus = initClinicStatus;
+}
+
+// Reactively update clinic status whenever language changes
+window.addEventListener('languageChanged', () => {
+  initClinicStatus();
+});
 
 /* ==========================================================================
    6. Location & Map Tabs
@@ -536,8 +461,10 @@ function initContactForm() {
 
     const name = document.getElementById('contact_name').value;
     const phone = document.getElementById('contact_phone').value;
-    const service = document.getElementById('contact_service').value;
+    const serviceSelectEl = document.getElementById('contact_service');
+    const service = serviceSelectEl ? (serviceSelectEl.options[serviceSelectEl.selectedIndex]?.text || serviceSelectEl.value) : '';
     const message = document.getElementById('contact_message').value;
+    const lang = getActiveLanguage();
 
     // Show instant pleasant feedback
     if (confirmation) {
@@ -546,14 +473,18 @@ function initContactForm() {
 
       const waBackupBtn = document.getElementById('contactWhatsAppBackup');
       if (waBackupBtn) {
-        const text = encodeURIComponent(
-          `*General Inquiry - Manu Ceylon Herbs*\n` +
-          `• Name: ${name}\n` +
-          `• Phone: ${phone}\n` +
-          `• Subject/Interest: ${service}\n` +
-          `• Message: ${message}`
-        );
-        waBackupBtn.href = `https://wa.me/94711017868?text=${text}`;
+        const text = lang === 'si'
+          ? `*සාමාන්‍ය විමසුම - මනූ සිලෝන් හර්බ්ස්*\n` +
+            `• නම: ${name}\n` +
+            `• දුරකථනය: ${phone}\n` +
+            `• විමසුම් මාතෘකාව: ${service}\n` +
+            `• පණිවිඩය: ${message}`
+          : `*General Inquiry - Manu Ceylon Herbs*\n` +
+            `• Name: ${name}\n` +
+            `• Phone: ${phone}\n` +
+            `• Subject/Interest: ${service}\n` +
+            `• Message: ${message}`;
+        waBackupBtn.href = `https://wa.me/94711017868?text=${encodeURIComponent(text)}`;
       }
     }
   });

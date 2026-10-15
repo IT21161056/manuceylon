@@ -2757,3 +2757,164 @@ ul {
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+   Multi-Language (English & Sinhala) Styles & Typography
+   ========================================================================== */
+
+/* Language Switcher Pill (Header) */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(197, 157, 95, 0.08);
+  border: 1px solid rgba(197, 157, 95, 0.3);
+  border-radius: var(--radius-full);
+  padding: 3px 4px;
+  gap: 2px;
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+
+.site-header.scrolled .lang-switcher {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 8px rgba(11, 41, 29, 0.06);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.78125rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.lang-btn:hover {
+  color: var(--color-primary);
+  background: rgba(197, 157, 95, 0.15);
+}
+
+.lang-btn.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(11, 41, 29, 0.25);
+}
+
+.lang-divider {
+  font-size: 0.7rem;
+  color: rgba(197, 157, 95, 0.45);
+  user-select: none;
+  padding: 0 1px;
+}
+
+/* Mobile Drawer Language Box */
+.mobile-drawer-lang-box {
+  background: var(--color-bg-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-drawer-lang-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: 0.65rem;
+}
+
+.drawer-lang-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.drawer-lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.drawer-lang-btn .lang-check {
+  opacity: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  transition: opacity var(--transition-fast);
+}
+
+.drawer-lang-btn.active {
+  border-color: var(--color-accent);
+  background: rgba(197, 157, 95, 0.12);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.drawer-lang-btn.active .lang-check {
+  opacity: 1;
+}
+
+/* Typography Customizations when Language is Sinhala */
+html[lang="si"] {
+  font-family: 'Noto Sans Sinhala', var(--font-sans);
+}
+
+html[lang="si"] h1,
+html[lang="si"] h2,
+html[lang="si"] h3,
+html[lang="si"] h4,
+html[lang="si"] .section-title,
+html[lang="si"] .hero-headline,
+html[lang="si"] .clinic-headline,
+html[lang="si"] .hours-title-wrap h3,
+html[lang="si"] .product-title,
+html[lang="si"] .treatment-en-title,
+html[lang="si"] .about-badge-title,
+html[lang="si"] .form-headline,
+html[lang="si"] .footer-col-title {
+  font-family: 'Noto Serif Sinhala', var(--font-serif);
+  letter-spacing: normal;
+  line-height: 1.35;
+}
+
+html[lang="si"] .hero-subtext,
+html[lang="si"] .section-desc,
+html[lang="si"] .about-lead,
+html[lang="si"] .about-body,
+html[lang="si"] .treatment-desc,
+html[lang="si"] .product-desc,
+html[lang="si"] .clinic-lead,
+html[lang="si"] .footer-brand-bio {
+  line-height: 1.75;
+}
+
+html[lang="si"] .hero-eyebrow,
+html[lang="si"] .clinic-eyebrow,
+html[lang="si"] .product-tag {
+  letter-spacing: 0.04em;
+}
