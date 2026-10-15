@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Serif+Sinhala:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
@@ -36,7 +36,7 @@
         <div class="container top-bar-inner">
             <div class="top-bar-item clinic-live-status">
                 <span class="status-indicator"></span>
-                <span>Clinic Open: Wed to Sun 9:00 AM to 6:00 PM (Mon & Tue Closed)</span>
+                <span data-i18n="topbar.clinicOpen">Clinic Open: Wed to Sun 9:00 AM to 6:00 PM (Mon & Tue Closed)</span>
             </div>
             <div class="top-bar-links">
                 <a href="tel:+94711017868" class="top-link" title="Call Manu Ceylon Herbs hotline">
@@ -45,7 +45,7 @@
                             d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                         </path>
                     </svg>
-                    <span>Hotline: +94 71 101 7868</span>
+                    <span data-i18n="topbar.hotline">Hotline: +94 71 101 7868</span>
                 </a>
                 <a href="https://wa.me/94711017868" target="_blank" rel="noopener noreferrer" class="top-link"
                     title="Inquire on WhatsApp">
@@ -53,7 +53,7 @@
                         <path
                             d="M20.52 3.48A11.9 11.9 0 0 0 12.02 0C5.4 0 .04 5.36.04 11.98c0 2.11.55 4.17 1.6 5.99L0 24l6.19-1.62a11.9 11.9 0 0 0 5.83 1.51h.01c6.62 0 11.98-5.36 11.98-11.98 0-3.2-1.25-6.21-3.49-8.43zM12.02 21.9c-1.79 0-3.55-.48-5.09-1.4l-.36-.22-3.78.99 1.01-3.68-.24-.38a9.92 9.92 0 0 1-1.52-5.23c0-5.5 4.48-9.98 9.98-9.98 2.66 0 5.17 1.04 7.05 2.92a9.93 9.93 0 0 1 2.93 7.06c0 5.5-4.48 9.98-9.98 9.98zm5.47-7.48c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15s-.78.98-.95 1.18c-.18.2-.35.23-.65.08s-1.27-.47-2.42-1.5c-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z" />
                     </svg>
-                    <span>WhatsApp Concierge</span>
+                    <span data-i18n="topbar.whatsapp">WhatsApp Concierge</span>
                 </a>
             </div>
         </div>
@@ -70,22 +70,35 @@
 
             <!-- Desktop Navigation -->
             <nav class="main-nav" aria-label="Primary navigation">
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="#products" class="nav-link">Remedies</a>
-                <a href="#clinic" class="nav-link">Medhini Ayurveda</a>
-                <a href="#treatments" class="nav-link">Treatments</a>
-                <a href="#team" class="nav-link">Medical Team</a>
-                <a href="#contact" class="nav-link">Visit & Contact</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">About Us</a>
+                <a href="#products" class="nav-link" data-i18n="nav.products">Remedies</a>
+                <a href="#clinic" class="nav-link" data-i18n="nav.clinic">Medhini Ayurveda</a>
+                <a href="#treatments" class="nav-link" data-i18n="nav.treatments">Treatments</a>
+                <a href="#team" class="nav-link" data-i18n="nav.team">Medical Team</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Visit & Contact</a>
             </nav>
 
             <!-- Desktop Action Group -->
             <div class="header-cta-group">
+                <!-- Language Switcher Pill -->
+                <div class="lang-switcher" role="group" aria-label="Language selection">
+                    <button type="button" class="lang-btn active" data-lang="en" aria-label="Switch to English"
+                        title="English">
+                        <span class="lang-btn-text">EN</span>
+                    </button>
+                    <span class="lang-divider" aria-hidden="true">|</span>
+                    <button type="button" class="lang-btn" data-lang="si" aria-label="සිංහල භාෂාවට මාරු වන්න"
+                        title="සිංහල">
+                        <span class="lang-btn-text">සිං</span>
+                    </button>
+                </div>
+
                 <button type="button" class="btn btn-primary btn-sm btn-book-treatment"
-                    data-treatment="General Ayurvedic Consultation">
+                    data-treatment="General Ayurvedic Consultation" data-i18n="nav.bookBtn">
                     Book Consultation
                 </button>
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Open mobile menu"
-                    aria-expanded="false">
+                    data-i18n-aria="nav.openMenu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -97,28 +110,52 @@
     <!-- Mobile Drawer Backdrop & Menu -->
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
     <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile menu">
+        <!-- Mobile Drawer Language Selector -->
+        <div class="mobile-drawer-lang-box">
+            <div class="mobile-drawer-lang-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                </svg>
+                <span data-i18n="drawer.languageLabel">Language / භාෂාව</span>
+            </div>
+            <div class="drawer-lang-toggle" role="group" aria-label="Language selection">
+                <button type="button" class="drawer-lang-btn active" data-lang="en">
+                    <span>English</span>
+                    <span class="lang-check">✓</span>
+                </button>
+                <button type="button" class="drawer-lang-btn" data-lang="si">
+                    <span>සිංහල</span>
+                    <span class="lang-check">✓</span>
+                </button>
+            </div>
+        </div>
 
         <ul class="mobile-nav-list">
-            <li><a href="#about" class="mobile-nav-link"><span>About Us</span> <span>→</span></a>
+            <li><a href="#about" class="mobile-nav-link"><span data-i18n="nav.about">About Us</span> <span>→</span></a>
             </li>
-            <li><a href="#products" class="mobile-nav-link"><span>Our Remedies</span>
+            <li><a href="#products" class="mobile-nav-link"><span data-i18n="nav.products">Our Remedies</span>
                     <span>→</span></a></li>
-            <li><a href="#clinic" class="mobile-nav-link"><span>Medhini Clinic</span>
+            <li><a href="#clinic" class="mobile-nav-link"><span data-i18n="nav.clinic">Medhini Clinic</span>
                     <span>→</span></a></li>
-            <li><a href="#treatments" class="mobile-nav-link"><span>Treatments</span>
+            <li><a href="#treatments" class="mobile-nav-link"><span data-i18n="nav.treatments">Treatments</span>
                     <span>→</span></a></li>
-            <li><a href="#team" class="mobile-nav-link"><span>Our Doctors</span> <span>→</span></a>
+            <li><a href="#team" class="mobile-nav-link"><span data-i18n="nav.team">Our Doctors</span> <span>→</span></a>
             </li>
-            <li><a href="#contact" class="mobile-nav-link"><span>Visit & Contact</span>
+            <li><a href="#contact" class="mobile-nav-link"><span data-i18n="nav.contact">Visit & Contact</span>
                     <span>→</span></a></li>
         </ul>
         <div class="mobile-drawer-contact">
-            <p style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">
+            <p style="font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;"
+                data-i18n="drawer.companyName">
                 Manu Ceylon Herbs</p>
-            <p style="margin-bottom: 0.25rem;">Hotline: +94 71 101 7868</p>
-            <p style="margin-bottom: 1rem;">Galle & Hokandara Centers</p>
+            <p style="margin-bottom: 0.25rem;" data-i18n="drawer.hotline">Hotline: +94 71 101 7868</p>
+            <p style="margin-bottom: 1rem;" data-i18n="drawer.locations">Galle & Hokandara Centers</p>
             <button type="button" class="btn btn-gold btn-sm btn-book-treatment" style="width: 100%;"
-                data-treatment="General Ayurvedic Consultation">
+                data-treatment="General Ayurvedic Consultation" data-i18n="drawer.bookAppointment">
                 Book Clinic Appointment
             </button>
         </div>
@@ -134,19 +171,19 @@
                 <div class="carousel-slide-overlay"></div>
                 <div class="container hero-content-wrapper">
                     <div class="hero-text-card">
-                        <span class="hero-eyebrow">Holistic Ceylon Wellness</span>
-                        <h1 class="hero-headline">Nourish your beauty with luxurious
+                        <span class="hero-eyebrow" data-i18n="hero.slide1.eyebrow">Holistic Ceylon Wellness</span>
+                        <h1 class="hero-headline" data-i18n="hero.slide1.headline">Nourish your beauty with luxurious
                             Ayurvedic
                             remedies</h1>
-                        <p class="hero-subtext">Achieve profound balance for your body,
+                        <p class="hero-subtext" data-i18n="hero.slide1.subtext">Achieve profound balance for your body,
                             mind, and
                             spirit through classical Sri
                             Lankan botanicals and certified physician formulations.</p>
                         <div class="hero-actions">
-                            <a href="#products" class="btn btn-gold">Explore
+                            <a href="#products" class="btn btn-gold" data-i18n="hero.slide1.ctaProducts">Explore
                                 Remedies</a>
                             <button type="button" class="btn btn-ghost-light btn-book-treatment"
-                                data-treatment="Holistic Wellness Consultation">Book
+                                data-treatment="Holistic Wellness Consultation" data-i18n="hero.slide1.ctaBook">Book
                                 Treatment</button>
                         </div>
                     </div>
@@ -160,18 +197,18 @@
                 <div class="carousel-slide-overlay"></div>
                 <div class="container hero-content-wrapper">
                     <div class="hero-text-card">
-                        <span class="hero-eyebrow">Essence of Ceylon</span>
-                        <h2 class="hero-headline">Experience pure therapeutic cosmetics
+                        <span class="hero-eyebrow" data-i18n="hero.slide2.eyebrow">Essence of Ceylon</span>
+                        <h2 class="hero-headline" data-i18n="hero.slide2.headline">Experience pure therapeutic cosmetics
                             from nature
                         </h2>
-                        <p class="hero-subtext">Handcrafted with ancient herbal recipes,
+                        <p class="hero-subtext" data-i18n="hero.slide2.subtext">Handcrafted with ancient herbal recipes,
                             free from
                             harsh parabens and synthetic
                             sulfates, for healthy radiant skin and vibrant hair.</p>
                         <div class="hero-actions">
-                            <a href="#products" class="btn btn-gold">Browse
+                            <a href="#products" class="btn btn-gold" data-i18n="hero.slide2.ctaProducts">Browse
                                 Apothecary</a>
-                            <a href="#about" class="btn btn-ghost-light">Our Botanical
+                            <a href="#about" class="btn btn-ghost-light" data-i18n="hero.slide2.ctaAbout">Our Botanical
                                 Heritage</a>
                         </div>
                     </div>
@@ -185,18 +222,18 @@
                 <div class="carousel-slide-overlay"></div>
                 <div class="container hero-content-wrapper">
                     <div class="hero-text-card">
-                        <span class="hero-eyebrow">Medhini Medical Sanctuary</span>
-                        <h2 class="hero-headline">Let classical Ayurveda restore your
+                        <span class="hero-eyebrow" data-i18n="hero.slide3.eyebrow">Medhini Medical Sanctuary</span>
+                        <h2 class="hero-headline" data-i18n="hero.slide3.headline">Let classical Ayurveda restore your
                             vitality and
                             health</h2>
-                        <p class="hero-subtext">Qualified Ayurvedic doctors offering
+                        <p class="hero-subtext" data-i18n="hero.slide3.subtext">Qualified Ayurvedic doctors offering
                             personalized
                             Panchakarma, joint relief
                             therapies, and authentic Chinese acupuncture.</p>
                         <div class="hero-actions">
-                            <a href="#treatments" class="btn btn-gold">View
+                            <a href="#treatments" class="btn btn-gold" data-i18n="hero.slide3.ctaTreatments">View
                                 Treatments</a>
-                            <a href="#contact" class="btn btn-ghost-light">Consult
+                            <a href="#contact" class="btn btn-ghost-light" data-i18n="hero.slide3.ctaContact">Consult
                                 Doctors</a>
                         </div>
                     </div>
@@ -236,8 +273,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="trust-item-title">43+ Indigenous Herbs</h3>
-                        <p class="trust-item-sub">Time-tested traditional formulas</p>
+                        <h3 class="trust-item-title" data-i18n="trust.pillar1.title">43+ Indigenous Herbs</h3>
+                        <p class="trust-item-sub" data-i18n="trust.pillar1.sub">Time-tested traditional formulas</p>
                     </div>
                 </div>
                 <div class="trust-item">
@@ -248,8 +285,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="trust-item-title">100% Pure Botanic</h3>
-                        <p class="trust-item-sub">Free from harmful chemicals</p>
+                        <h3 class="trust-item-title" data-i18n="trust.pillar2.title">100% Pure Botanic</h3>
+                        <p class="trust-item-sub" data-i18n="trust.pillar2.sub">Free from harmful chemicals</p>
                     </div>
                 </div>
                 <div class="trust-item">
@@ -261,8 +298,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="trust-item-title">Qualified Physicians</h3>
-                        <p class="trust-item-sub">BAMS graduated specialists</p>
+                        <h3 class="trust-item-title" data-i18n="trust.pillar3.title">Qualified Physicians</h3>
+                        <p class="trust-item-sub" data-i18n="trust.pillar3.sub">BAMS graduated specialists</p>
                     </div>
                 </div>
                 <div class="trust-item">
@@ -276,8 +313,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="trust-item-title">Clinical Sanctuary</h3>
-                        <p class="trust-item-sub">Centers in Galle & Hokandara</p>
+                        <h3 class="trust-item-title" data-i18n="trust.pillar4.title">Clinical Sanctuary</h3>
+                        <p class="trust-item-sub" data-i18n="trust.pillar4.sub">Centers in Galle & Hokandara</p>
                     </div>
                 </div>
             </div>
@@ -297,7 +334,7 @@
 
                         <!-- Bottom Frosted Pill Badge -->
                         <div class="about-arch-badge">
-                            <span>Pure Ceylon Heritage</span>
+                            <span data-i18n="about.badge.title">Pure Ceylon Heritage</span>
                         </div>
                     </div>
 
@@ -312,23 +349,23 @@
                     <div class="about-gold-seal">
                         <div class="seal-inner">
                             <span class="seal-leaf">🌿</span>
-                            <span class="seal-num">43+</span>
-                            <span class="seal-line1">Rare Ceylon</span>
-                            <span class="seal-line2">Botanicals</span>
+                            <span class="seal-num" data-i18n="about.sealNum">43+</span>
+                            <span class="seal-line1" data-i18n="about.sealLine1">Rare Ceylon</span>
+                            <span class="seal-line2" data-i18n="about.sealLine2">Botanicals</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Content Column (Kicker, 2-line Headline, Paragraph, 2x2 Cards, Buttons) -->
                 <div class="about-content-column">
-                    <span class="about-kicker">Botanical Heritage & Clinical Sanctuary</span>
+                    <span class="about-kicker" data-i18n="about.kicker">Botanical Heritage & Clinical Sanctuary</span>
 
                     <h2 class="about-headline">
-                        <span class="headline-part1">Ancient Wisdom for</span>
-                        <span class="headline-part2">Modern Holistic Living</span>
+                        <span class="headline-part1" data-i18n="about.headlinePart1">Ancient Wisdom for</span>
+                        <span class="headline-part2" data-i18n="about.headlinePart2">Modern Holistic Living</span>
                     </h2>
 
-                    <p class="about-subtext">At Manu Ceylon Herbs, we bridge centuries of Sri
+                    <p class="about-subtext" data-i18n="about.lead">At Manu Ceylon Herbs, we bridge centuries of Sri
                         Lankan
                         Ayurvedic tradition with modern purity, creating transformative herbal remedies that restore
                         natural
@@ -342,8 +379,8 @@
                                 <span class="card-num">01</span>
                                 <span class="card-arrow" aria-hidden="true">→</span>
                             </div>
-                            <h3 class="card-title">Indigenous Herbal Purity</h3>
-                            <p class="card-desc">Formulated with 43+ rare Sri Lankan botanicals,
+                            <h3 class="card-title" data-i18n="about.pill1">Indigenous Herbal Purity</h3>
+                            <p class="card-desc" data-i18n="about.desc1">Formulated with 43+ rare Sri Lankan botanicals,
                                 free from
                                 parabens.</p>
                         </div>
@@ -354,8 +391,8 @@
                                 <span class="card-num">02</span>
                                 <span class="card-arrow" aria-hidden="true">→</span>
                             </div>
-                            <h3 class="card-title">Physician-Guided Healing</h3>
-                            <p class="card-desc">Supervised by university BAMS doctors
+                            <h3 class="card-title" data-i18n="about.pill2">Physician-Guided Healing</h3>
+                            <p class="card-desc" data-i18n="about.desc2">Supervised by university BAMS doctors
                                 diagnosing root causes.
                             </p>
                         </div>
@@ -366,8 +403,8 @@
                                 <span class="card-num">03</span>
                                 <span class="card-arrow" aria-hidden="true">→</span>
                             </div>
-                            <h3 class="card-title">Authentic Panchakarma</h3>
-                            <p class="card-desc">Restorative detox therapies & authentic Chinese
+                            <h3 class="card-title" data-i18n="about.pill3">Authentic Panchakarma</h3>
+                            <p class="card-desc" data-i18n="about.desc3">Restorative detox therapies & authentic Chinese
                                 acupuncture.
                             </p>
                         </div>
@@ -378,8 +415,8 @@
                                 <span class="card-num">04</span>
                                 <span class="card-arrow" aria-hidden="true">→</span>
                             </div>
-                            <h3 class="card-title">Island-Wide Dispatch</h3>
-                            <p class="card-desc">Freshly batched therapeutic cosmetics safely
+                            <h3 class="card-title" data-i18n="about.pill4">Island-Wide Dispatch</h3>
+                            <p class="card-desc" data-i18n="about.desc4">Freshly batched therapeutic cosmetics safely
                                 delivered across
                                 Sri Lanka.</p>
                         </div>
@@ -388,11 +425,11 @@
                     <!-- Dual Call to Action Buttons -->
                     <div class="about-actions-group">
                         <a href="#products" class="btn btn-about-primary">
-                            <span>Discover the Collection</span>
+                            <span data-i18n="about.cta">Discover the Collection</span>
                             <span class="btn-arrow" aria-hidden="true">→</span>
                         </a>
                         <a href="#clinic" class="btn btn-about-secondary">
-                            <span>Explore Medhini Clinic</span>
+                            <span data-i18n="about.secondaryCta">Explore Medhini Clinic</span>
                             <span class="btn-arrow" aria-hidden="true">→</span>
                         </a>
                     </div>
@@ -405,8 +442,8 @@
     <section class="products-section" id="products">
         <div class="container">
             <div class="section-head">
-                <h2 class="section-title">Authentic Herbal Cosmetics</h2>
-                <p class="section-desc">Handcrafted with pure botanical essences and
+                <h2 class="section-title" data-i18n="products.title">Authentic Herbal Cosmetics</h2>
+                <p class="section-desc" data-i18n="products.desc">Handcrafted with pure botanical essences and
                     therapeutic oils
                     to rejuvenate your skin
                     and revitalize your hair naturally.</p>
@@ -414,14 +451,15 @@
 
             <!-- Category Filter Tabs -->
             <div class="filter-tabs">
-                <button type="button" class="filter-btn active" data-filter="all">All
+                <button type="button" class="filter-btn active" data-filter="all" data-i18n="products.filter.all">All
                     Remedies</button>
-                <button type="button" class="filter-btn" data-filter="hair">Hair
+                <button type="button" class="filter-btn" data-filter="hair" data-i18n="products.filter.hair">Hair
                     Care</button>
-                <button type="button" class="filter-btn" data-filter="skin">Skin &
+                <button type="button" class="filter-btn" data-filter="skin" data-i18n="products.filter.skin">Skin &
                     Facial
                     Care</button>
-                <button type="button" class="filter-btn" data-filter="grooming">Grooming &
+                <button type="button" class="filter-btn" data-filter="grooming"
+                    data-i18n="products.filter.grooming">Grooming &
                     Lip Care</button>
             </div>
 
@@ -439,7 +477,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                            <span>Quick View</span>
+                            <span data-i18n="products.quickView">Quick View</span>
                         </button>
                     </div>
                     <div class="product-card-content">
@@ -450,9 +488,10 @@
                             dandruff, and reverse premature greying.</p>
                         <div class="product-card-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-quick-view"
-                                data-product-id="hair-oil">Details</button>
+                                data-product-id="hair-oil" data-i18n="products.details">Details</button>
                             <a href="https://wa.me/94711017868?text=Hello%20Manu%20Ceylon%20Herbs!%20I%20would%20like%20to%20order%20Murdhini%20Hair%20Oil."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"
+                                data-i18n="products.orderWhatsApp">
                                 Order via WhatsApp
                             </a>
                         </div>
@@ -472,7 +511,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                            <span>Quick View</span>
+                            <span data-i18n="products.quickView">Quick View</span>
                         </button>
                     </div>
                     <div class="product-card-content">
@@ -483,9 +522,10 @@
                             lasting moisture into dry, fragile hair.</p>
                         <div class="product-card-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-quick-view"
-                                data-product-id="shampoo-conditioner">Details</button>
+                                data-product-id="shampoo-conditioner" data-i18n="products.details">Details</button>
                             <a href="https://wa.me/94711017868?text=Hello%20Manu%20Ceylon%20Herbs!%20I%20would%20like%20to%20order%20Herbal%20Shampoo%20and%20Conditioner."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"
+                                data-i18n="products.orderWhatsApp">
                                 Order via WhatsApp
                             </a>
                         </div>
@@ -505,7 +545,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                            <span>Quick View</span>
+                            <span data-i18n="products.quickView">Quick View</span>
                         </button>
                     </div>
                     <div class="product-card-content">
@@ -516,9 +556,10 @@
                             youthful elasticity overnight.</p>
                         <div class="product-card-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-quick-view"
-                                data-product-id="day-night-cream">Details</button>
+                                data-product-id="day-night-cream" data-i18n="products.details">Details</button>
                             <a href="https://wa.me/94711017868?text=Hello%20Manu%20Ceylon%20Herbs!%20I%20would%20like%20to%20order%20Day%20and%20Night%20Cream."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"
+                                data-i18n="products.orderWhatsApp">
                                 Order via WhatsApp
                             </a>
                         </div>
@@ -538,7 +579,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                            <span>Quick View</span>
+                            <span data-i18n="products.quickView">Quick View</span>
                         </button>
                     </div>
                     <div class="product-card-content">
@@ -549,9 +590,10 @@
                             hydration, and impart a radiant glow.</p>
                         <div class="product-card-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-quick-view"
-                                data-product-id="body-lotion">Details</button>
+                                data-product-id="body-lotion" data-i18n="products.details">Details</button>
                             <a href="https://wa.me/94711017868?text=Hello%20Manu%20Ceylon%20Herbs!%20I%20would%20like%20to%20order%20Ayurvedic%20Body%20Lotion."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"
+                                data-i18n="products.orderWhatsApp">
                                 Order via WhatsApp
                             </a>
                         </div>
@@ -571,7 +613,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                            <span>Quick View</span>
+                            <span data-i18n="products.quickView">Quick View</span>
                         </button>
                     </div>
                     <div class="product-card-content">
@@ -582,9 +624,10 @@
                             excessive oiliness, and clears stubborn scars.</p>
                         <div class="product-card-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-quick-view"
-                                data-product-id="pimple-cream">Details</button>
+                                data-product-id="pimple-cream" data-i18n="products.details">Details</button>
                             <a href="https://wa.me/94711017868?text=Hello%20Manu%20Ceylon%20Herbs!%20I%20would%20like%20to%20order%20Pimple%20Cream."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"
+                                data-i18n="products.orderWhatsApp">
                                 Order via WhatsApp
                             </a>
                         </div>
@@ -604,7 +647,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                            <span>Quick View</span>
+                            <span data-i18n="products.quickView">Quick View</span>
                         </button>
                     </div>
                     <div class="product-card-content">
@@ -615,9 +658,10 @@
                             dryness relief, and deep dermal purification.</p>
                         <div class="product-card-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-quick-view"
-                                data-product-id="herbal-soap">Details</button>
+                                data-product-id="herbal-soap" data-i18n="products.details">Details</button>
                             <a href="https://wa.me/94711017868?text=Hello%20Manu%20Ceylon%20Herbs!%20I%20would%20like%20to%20order%20Herbal%20Soap%20Collection."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"
+                                data-i18n="products.orderWhatsApp">
                                 Order via WhatsApp
                             </a>
                         </div>
@@ -636,7 +680,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                            <span>Quick View</span>
+                            <span data-i18n="products.quickView">Quick View</span>
                         </button>
                     </div>
                     <div class="product-card-content">
@@ -647,9 +691,10 @@
                             hair, and prevent premature greying.</p>
                         <div class="product-card-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-quick-view"
-                                data-product-id="beard-oil">Details</button>
+                                data-product-id="beard-oil" data-i18n="products.details">Details</button>
                             <a href="https://wa.me/94711017868?text=Hello%20Manu%20Ceylon%20Herbs!%20I%20would%20like%20to%20order%20Herbal%20Beard%20Oil."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"
+                                data-i18n="products.orderWhatsApp">
                                 Order via WhatsApp
                             </a>
                         </div>
@@ -669,7 +714,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                            <span>Quick View</span>
+                            <span data-i18n="products.quickView">Quick View</span>
                         </button>
                     </div>
                     <div class="product-card-content">
@@ -680,9 +725,10 @@
                             naturally soft, supple, rosy lips.</p>
                         <div class="product-card-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-quick-view"
-                                data-product-id="lip-balm-scrub">Details</button>
+                                data-product-id="lip-balm-scrub" data-i18n="products.details">Details</button>
                             <a href="https://wa.me/94711017868?text=Hello%20Manu%20Ceylon%20Herbs!%20I%20would%20like%20to%20order%20Lip%20Balm%20and%20Scrub."
-                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm"
+                                data-i18n="products.orderWhatsApp">
                                 Order via WhatsApp
                             </a>
                         </div>
@@ -699,9 +745,9 @@
             <div class="clinic-spotlight-grid">
                 <!-- Content Side -->
                 <div class="clinic-spotlight-content">
-                    <span class="clinic-eyebrow">Medical Sanctuary</span>
-                    <h2 class="clinic-headline">Medhini Ayurvedic Medical Center</h2>
-                    <p class="clinic-lead">A clinical healing sanctuary in Hokandara North,
+                    <span class="clinic-eyebrow" data-i18n="clinic.eyebrow">Medical Sanctuary</span>
+                    <h2 class="clinic-headline" data-i18n="clinic.headline">Medhini Ayurvedic Medical Center</h2>
+                    <p class="clinic-lead" data-i18n="clinic.lead">A clinical healing sanctuary in Hokandara North,
                         staffed by
                         university-qualified
                         Ayurvedic physicians holding BAMS degrees. We offer specialized classical therapies that
@@ -714,28 +760,28 @@
                                 stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Joint Diseases & Orthopedic Care</span>
+                            <span data-i18n="clinic.spec1">Joint Diseases & Orthopedic Care</span>
                         </div>
                         <div class="clinic-spec-item">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Authentic Chinese Acupuncture</span>
+                            <span data-i18n="clinic.spec2">Authentic Chinese Acupuncture</span>
                         </div>
                         <div class="clinic-spec-item">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Gynecology & Pediatric Health</span>
+                            <span data-i18n="clinic.spec3">Gynecology & Pediatric Health</span>
                         </div>
                         <div class="clinic-spec-item">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Custom Panchakarma & Beauty Culture</span>
+                            <span data-i18n="clinic.spec4">Custom Panchakarma & Beauty Culture</span>
                         </div>
                     </div>
 
@@ -744,9 +790,9 @@
                         <img src="assets/images/director.webp" alt="Dr. Maneesha Kooragoda portrait"
                             class="clinic-physician-thumb" width="58" height="58">
                         <div>
-                            <p class="clinic-physician-role">Head of Clinical Medicine</p>
-                            <h3 class="clinic-physician-name">Dr. Maneesha Kooragoda</h3>
-                            <p class="clinic-physician-cred">BAMS (University of Colombo) •
+                            <p class="clinic-physician-role" data-i18n="clinic.doc.role">Head of Clinical Medicine</p>
+                            <h3 class="clinic-physician-name" data-i18n="clinic.doc.name">Dr. Maneesha Kooragoda</h3>
+                            <p class="clinic-physician-cred" data-i18n="clinic.doc.cred">BAMS (University of Colombo) •
                                 Acupuncture &
                                 Panchakarma</p>
                         </div>
@@ -754,10 +800,10 @@
 
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <button type="button" class="btn btn-gold btn-book-treatment"
-                            data-treatment="Medhini Clinical Consultation">
+                            data-treatment="Medhini Clinical Consultation" data-i18n="clinic.bookConsultation">
                             Book Medical Consultation
                         </button>
-                        <a href="tel:+94711017868" class="btn btn-ghost-light">
+                        <a href="tel:+94711017868" class="btn btn-ghost-light" data-i18n="clinic.callPhone">
                             Call Clinic: +94 71 101 7868
                         </a>
                     </div>
@@ -769,9 +815,9 @@
                         <img src="assets/images/story.webp" alt="Sacred Ayurvedic healing deity artwork"
                             class="clinic-artwork-img" width="300" height="548" loading="lazy">
                         <div class="clinic-artwork-caption">
-                            <p class="clinic-artwork-title">Sacred Heritage of
+                            <p class="clinic-artwork-title" data-i18n="clinic.artwork.title">Sacred Heritage of
                                 Ayurvedic Healing</p>
-                            <p class="clinic-artwork-sub">Honoring classical Sri Lankan
+                            <p class="clinic-artwork-sub" data-i18n="clinic.artwork.sub">Honoring classical Sri Lankan
                                 healing
                                 traditions at Medhini Sanctuary</p>
                         </div>
@@ -785,8 +831,8 @@
     <section class="treatments-section" id="treatments">
         <div class="container">
             <div class="section-head">
-                <h2 class="section-title">Specialized Clinical Treatments</h2>
-                <p class="section-desc">Traditional Sri Lankan medicine administered by
+                <h2 class="section-title" data-i18n="treatments.title">Specialized Clinical Treatments</h2>
+                <p class="section-desc" data-i18n="treatments.desc">Traditional Sri Lankan medicine administered by
                     certified
                     practitioners with proven
                     clinical methodologies.</p>
@@ -808,12 +854,12 @@
                             injuries, and joint inflammation using medicated herbal pastes and warm oil baths.</p>
                         <div class="treatment-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-book-treatment"
-                                data-treatment="Joint Diseases & Fractures">
+                                data-treatment="Joint Diseases & Fractures" data-i18n="treatments.bookBtn">
                                 Book Treatment
                             </button>
                             <a href="https://wa.me/94711017868?text=Hello%20Dr.%20Maneesha!%20I%20would%20like%20to%20inquire%20about%20Treatments%20for%20Joint%20Diseases."
                                 target="_blank" rel="noopener noreferrer" class="location-card-link"
-                                style="font-size:0.875rem;">
+                                style="font-size:0.875rem;" data-i18n="treatments.inquireWa">
                                 Inquire WhatsApp →
                             </a>
                         </div>
@@ -835,12 +881,12 @@
                             hormonal balance, postnatal rejuvenation, and gentle herbal pediatrics for children.</p>
                         <div class="treatment-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-book-treatment"
-                                data-treatment="Gynecology & Pediatrics">
+                                data-treatment="Gynecology & Pediatrics" data-i18n="treatments.bookBtn">
                                 Book Treatment
                             </button>
                             <a href="https://wa.me/94711017868?text=Hello%20Dr.%20Maneesha!%20I%20would%20like%20to%20inquire%20about%20Gynecology%20and%20Pediatrics."
                                 target="_blank" rel="noopener noreferrer" class="location-card-link"
-                                style="font-size:0.875rem;">
+                                style="font-size:0.875rem;" data-i18n="treatments.inquireWa">
                                 Inquire WhatsApp →
                             </a>
                         </div>
@@ -862,12 +908,12 @@
                             blood glucose levels, manage lipid profiles, and balance cardiovascular pressure.</p>
                         <div class="treatment-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-book-treatment"
-                                data-treatment="Diabetes, Cholesterol & Hypertension">
+                                data-treatment="Diabetes, Cholesterol & Hypertension" data-i18n="treatments.bookBtn">
                                 Book Treatment
                             </button>
                             <a href="https://wa.me/94711017868?text=Hello%20Dr.%20Maneesha!%20I%20would%20like%20to%20inquire%20about%20NCD%20treatments."
                                 target="_blank" rel="noopener noreferrer" class="location-card-link"
-                                style="font-size:0.875rem;">
+                                style="font-size:0.875rem;" data-i18n="treatments.inquireWa">
                                 Inquire WhatsApp →
                             </a>
                         </div>
@@ -889,12 +935,12 @@
                             and chronic colorectal discomfort with specialized herbal formulations.</p>
                         <div class="treatment-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-book-treatment"
-                                data-treatment="Hemorrhoids & Fistula Care">
+                                data-treatment="Hemorrhoids & Fistula Care" data-i18n="treatments.bookBtn">
                                 Book Treatment
                             </button>
                             <a href="https://wa.me/94711017868?text=Hello%20Dr.%20Maneesha!%20I%20would%20like%20to%20inquire%20about%20Hemorrhoids%20Care."
                                 target="_blank" rel="noopener noreferrer" class="location-card-link"
-                                style="font-size:0.875rem;">
+                                style="font-size:0.875rem;" data-i18n="treatments.inquireWa">
                                 Inquire WhatsApp →
                             </a>
                         </div>
@@ -916,12 +962,12 @@
                             psoriasis, eczema, and fungal infections, purifying the blood from within.</p>
                         <div class="treatment-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-book-treatment"
-                                data-treatment="Dermatology & Calluses">
+                                data-treatment="Dermatology & Calluses" data-i18n="treatments.bookBtn">
                                 Book Treatment
                             </button>
                             <a href="https://wa.me/94711017868?text=Hello%20Dr.%20Maneesha!%20I%20would%20like%20to%20inquire%20about%20Skin%20Treatments."
                                 target="_blank" rel="noopener noreferrer" class="location-card-link"
-                                style="font-size:0.875rem;">
+                                style="font-size:0.875rem;" data-i18n="treatments.inquireWa">
                                 Inquire WhatsApp →
                             </a>
                         </div>
@@ -944,12 +990,12 @@
                             physicians to alleviate chronic nerve pain, migraine, stress, and muscle spasms.</p>
                         <div class="treatment-footer">
                             <button type="button" class="btn btn-secondary btn-sm btn-book-treatment"
-                                data-treatment="Acupuncture & Cupping">
+                                data-treatment="Acupuncture & Cupping" data-i18n="treatments.bookBtn">
                                 Book Treatment
                             </button>
                             <a href="https://wa.me/94711017868?text=Hello%20Dr.%20Maneesha!%20I%20would%20like%20to%20inquire%20about%20Acupuncture."
                                 target="_blank" rel="noopener noreferrer" class="location-card-link"
-                                style="font-size:0.875rem;">
+                                style="font-size:0.875rem;" data-i18n="treatments.inquireWa">
                                 Inquire WhatsApp →
                             </a>
                         </div>
@@ -963,8 +1009,8 @@
     <section class="team-section" id="team">
         <div class="container">
             <div class="section-head">
-                <h2 class="section-title">Leadership & Medical Faculty</h2>
-                <p class="section-desc">Guiding Manu Ceylon Herbs and Medhini Ayurveda with
+                <h2 class="section-title" data-i18n="team.title">Leadership & Medical Faculty</h2>
+                <p class="section-desc" data-i18n="team.desc">Guiding Manu Ceylon Herbs and Medhini Ayurveda with
                     profound
                     scientific rigor, clinical
                     excellence, and deep devotion to natural healing.</p>
@@ -977,12 +1023,13 @@
                         <img src="assets/images/managing-director.webp" alt="Mr. Kusal Peiris - Managing Director"
                             class="team-avatar" width="180" height="180" loading="lazy">
                     </div>
-                    <p class="team-role">Managing Director</p>
-                    <h3 class="team-name">Mr. Kusal Peiris</h3>
+                    <p class="team-role" data-i18n="team.director.role">Managing Director</p>
+                    <h3 class="team-name" data-i18n="team.director.name">Mr. Kusal Peiris</h3>
                     <div class="team-credentials">
-                        <p>B.Sc (Physical Science) - University of Ruhuna</p>
-                        <p>PgDip (MIT) - UCSC, University of Colombo</p>
-                        <p style="margin-top: 0.75rem; color: var(--color-primary); font-weight: 600;">Executive Strategy &
+                        <p data-i18n="team.director.cred1">B.Sc (Physical Science) - University of Ruhuna</p>
+                        <p data-i18n="team.director.cred2">PgDip (MIT) - UCSC, University of Colombo</p>
+                        <p style="margin-top: 0.75rem; color: var(--color-primary); font-weight: 600;"
+                            data-i18n="team.director.focus">Executive Strategy &
                             Botanical Quality Standards</p>
                     </div>
                 </div>
@@ -993,14 +1040,15 @@
                         <img src="assets/images/director.webp" alt="Dr. Maneesha Kooragoda - Director & Physician"
                             class="team-avatar" width="180" height="180" loading="lazy">
                     </div>
-                    <p class="team-role">Director & Chief Physician</p>
-                    <h3 class="team-name">Dr. Maneesha Kooragoda</h3>
+                    <p class="team-role" data-i18n="team.doctor.role">Director & Chief Physician</p>
+                    <h3 class="team-name" data-i18n="team.doctor.name">Dr. Maneesha Kooragoda</h3>
                     <div class="team-credentials">
-                        <p>BAMS - University of Colombo</p>
-                        <p>Diploma in Panchakarma & Beauty Culture</p>
-                        <p>Diploma in Product Manufacturing</p>
-                        <p>Advance Certificate in Acupuncture</p>
-                        <p style="margin-top: 0.75rem; color: var(--color-primary); font-weight: 600;">Clinical Formulations &
+                        <p data-i18n="team.doctor.cred1">BAMS - University of Colombo</p>
+                        <p data-i18n="team.doctor.cred2">Diploma in Panchakarma & Beauty Culture</p>
+                        <p data-i18n="team.doctor.cred3">Diploma in Product Manufacturing</p>
+                        <p data-i18n="team.doctor.cred4">Advance Certificate in Acupuncture</p>
+                        <p style="margin-top: 0.75rem; color: var(--color-primary); font-weight: 600;"
+                            data-i18n="team.doctor.focus">Clinical Formulations &
                             Medical Consultations</p>
                     </div>
                 </div>
@@ -1021,9 +1069,10 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-primary);">
+                        <h3 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-primary);"
+                            data-i18n="hours.title">
                             Medhini Clinical Treatment Hours</h3>
-                        <p style="font-size: 0.8125rem; color: var(--color-text-muted);">Please
+                        <p style="font-size: 0.8125rem; color: var(--color-text-muted);" data-i18n="hours.sub">Please
                             book in
                             advance to ensure dedicated
                             physician time</p>
@@ -1031,32 +1080,36 @@
                 </div>
                 <div class="hours-live-badge clinic-live-status">
                     <span class="status-indicator"></span>
-                    <span>Open: Wed to Sun 9:00 AM to 6:00 PM</span>
+                    <span data-i18n="topbar.clinicOpen">Open: Wed to Sun 9:00 AM to 6:00 PM</span>
                 </div>
             </div>
 
             <div class="hours-grid">
                 <div class="hour-tile closed">
-                    <p class="hour-day">Monday & Tuesday</p>
-                    <p class="hour-time">Closed</p>
-                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">Prep & Research</p>
+                    <p class="hour-day" data-i18n="hours.mon.day">Monday & Tuesday</p>
+                    <p class="hour-time" data-i18n="hours.mon.status">Closed</p>
+                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;"
+                        data-i18n="hours.mon.note">Prep & Research</p>
                 </div>
                 <div class="hour-tile">
-                    <p class="hour-day">Wednesday – Friday</p>
-                    <p class="hour-time">9:00 AM to 6:00 PM</p>
-                    <p style="font-size: 0.75rem; color: var(--color-primary); margin-top: 0.25rem;">
+                    <p class="hour-day" data-i18n="hours.wed.day">Wednesday – Friday</p>
+                    <p class="hour-time" data-i18n="hours.wed.time">9:00 AM to 6:00 PM</p>
+                    <p style="font-size: 0.75rem; color: var(--color-primary); margin-top: 0.25rem;"
+                        data-i18n="hours.wed.note">
                         Clinical Sessions</p>
                 </div>
                 <div class="hour-tile">
-                    <p class="hour-day">Saturday</p>
-                    <p class="hour-time">9:00 AM to 6:00 PM</p>
-                    <p style="font-size: 0.75rem; color: var(--color-primary); margin-top: 0.25rem;">
+                    <p class="hour-day" data-i18n="hours.sat.day">Saturday</p>
+                    <p class="hour-time" data-i18n="hours.sat.time">9:00 AM to 6:00 PM</p>
+                    <p style="font-size: 0.75rem; color: var(--color-primary); margin-top: 0.25rem;"
+                        data-i18n="hours.sat.note">
                         Full Day Clinic</p>
                 </div>
                 <div class="hour-tile">
-                    <p class="hour-day">Sunday</p>
-                    <p class="hour-time">9:00 AM to 6:00 PM</p>
-                    <p style="font-size: 0.75rem; color: var(--color-primary); margin-top: 0.25rem;">
+                    <p class="hour-day" data-i18n="hours.sun.day">Sunday</p>
+                    <p class="hour-time" data-i18n="hours.sun.time">9:00 AM to 6:00 PM</p>
+                    <p style="font-size: 0.75rem; color: var(--color-primary); margin-top: 0.25rem;"
+                        data-i18n="hours.sun.note">
                         Full Day Clinic</p>
                 </div>
             </div>
@@ -1067,8 +1120,8 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="section-head">
-                <h2 class="section-title">Visit Our Sanctuaries & Connect</h2>
-                <p class="section-desc">Inquire about products, book treatments, or reach out
+                <h2 class="section-title" data-i18n="contact.title">Visit Our Sanctuaries & Connect</h2>
+                <p class="section-desc" data-i18n="contact.desc">Inquire about products, book treatments, or reach out
                     to our
                     team directly. We are
                     delighted to assist your wellness journey.</p>
@@ -1079,10 +1132,12 @@
                 <div class="location-column">
                     <!-- Location Switcher Tabs -->
                     <div class="location-tabs">
-                        <button type="button" class="location-tab-btn active" data-location="hokandara">
+                        <button type="button" class="location-tab-btn active" data-location="hokandara"
+                            data-i18n="contact.tab.hokandara">
                             Medhini Clinic (Hokandara)
                         </button>
-                        <button type="button" class="location-tab-btn" data-location="galle">
+                        <button type="button" class="location-tab-btn" data-location="galle"
+                            data-i18n="contact.tab.galle">
                             Manu Ceylon HQ (Galle)
                         </button>
                     </div>
@@ -1098,9 +1153,9 @@
                     <!-- Quick Location Cards Row -->
                     <div class="location-cards-row">
                         <div class="location-info-card">
-                            <p class="location-card-tag">Medical Center</p>
-                            <h3 class="location-card-title">Medhini Ayurveda</h3>
-                            <p class="location-card-text">No. 378/9D, 5th Lane,
+                            <p class="location-card-tag" data-i18n="contact.card.clinicTag">Medical Center</p>
+                            <h3 class="location-card-title" data-i18n="contact.card.clinicTitle">Medhini Ayurveda</h3>
+                            <p class="location-card-text" data-i18n="contact.card.clinicText">No. 378/9D, 5th Lane,
                                 Rathnarama Road,
                                 Hokandara North 10118.</p>
                             <a href="tel:+94711017868" class="location-card-link">
@@ -1115,9 +1170,9 @@
                         </div>
 
                         <div class="location-info-card">
-                            <p class="location-card-tag">Product Headquarters</p>
-                            <h3 class="location-card-title">Manu Ceylon Herbs</h3>
-                            <p class="location-card-text">No. 12, Nagoda, Galle, Sri
+                            <p class="location-card-tag" data-i18n="contact.card.hqTag">Product Headquarters</p>
+                            <h3 class="location-card-title" data-i18n="contact.card.hqTitle">Manu Ceylon Herbs</h3>
+                            <p class="location-card-text" data-i18n="contact.card.hqText">No. 12, Nagoda, Galle, Sri
                                 Lanka. Orders and
                                 islandwide delivery.</p>
                             <a href="tel:+94711017868" class="location-card-link">
@@ -1135,56 +1190,59 @@
 
                 <!-- Contact Form Column -->
                 <div class="contact-form-column">
-                    <h3 class="form-headline">Send a Direct Message</h3>
-                    <p class="form-lead">Fill in the details below and our team will get
+                    <h3 class="form-headline" data-i18n="contact.form.title">Send a Direct Message</h3>
+                    <p class="form-lead" data-i18n="contact.form.lead">Fill in the details below and our team will get
                         in touch
                         with you promptly.</p>
 
                     <form id="mainContactForm">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="contact_name" class="form-label">Full
+                                <label for="contact_name" class="form-label" data-i18n="contact.form.nameLabel">Full
                                     Name *</label>
                                 <input type="text" id="contact_name" class="form-input"
-                                    placeholder="e.g. Priyantha Silva" required>
+                                    placeholder="e.g. Priyantha Silva"
+                                    data-i18n-placeholder="contact.form.namePlaceholder" required>
                             </div>
                             <div class="form-group">
-                                <label for="contact_phone" class="form-label">Phone
+                                <label for="contact_phone" class="form-label" data-i18n="contact.form.phoneLabel">Phone
                                     Number *</label>
-                                <input type="tel" id="contact_phone" class="form-input" placeholder="e.g. 077 123 4567" required>
+                                <input type="tel" id="contact_phone" class="form-input" placeholder="e.g. 077 123 4567"
+                                    data-i18n-placeholder="contact.form.phonePlaceholder" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="contact_service" class="form-label">Inquiry
+                            <label for="contact_service" class="form-label" data-i18n="contact.form.topicLabel">Inquiry
                                 Topic</label>
                             <select id="contact_service" class="form-select">
-                                <option value="Product Order Inquiry">
+                                <option value="Product Order Inquiry" data-i18n="contact.form.topicOptionProduct">
                                     Product Order or
                                     Herbal Inquiry</option>
-                                <option value="Clinic Appointment">Medical
+                                <option value="Clinic Appointment" data-i18n="contact.form.topicOptionClinic">Medical
                                     Treatment
                                     Appointment</option>
-                                <option value="General Consultation">General
+                                <option value="General Consultation" data-i18n="contact.form.topicOptionGeneral">General
                                     Wellness
                                     Consultation</option>
-                                <option value="Other">Other Inquiry</option>
+                                <option value="Other" data-i18n="contact.form.topicOptionOther">Other Inquiry</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="contact_message" class="form-label">Your
+                            <label for="contact_message" class="form-label" data-i18n="contact.form.messageLabel">Your
                                 Message
                                 *</label>
-                            <textarea id="contact_message" class="form-textarea" placeholder="How may we assist you?" required></textarea>
+                            <textarea id="contact_message" class="form-textarea" placeholder="How may we assist you?"
+                                data-i18n-placeholder="contact.form.messagePlaceholder" required></textarea>
                         </div>
 
                         <div class="form-submit-row">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">
                                 Send Inquiry
                             </button>
                             <a href="https://wa.me/94711017868" target="_blank" rel="noopener noreferrer"
-                                class="btn btn-whatsapp btn-sm">
+                                class="btn btn-whatsapp btn-sm" data-i18n="contact.form.chatWa">
                                 Chat on WhatsApp Instead
                             </a>
                         </div>
@@ -1200,12 +1258,15 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                         </div>
-                        <h4 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">
+                        <h4 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;"
+                            data-i18n="contact.form.successTitle">
                             Message Received</h4>
-                        <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.25rem;">Thank you for
+                        <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.25rem;"
+                            data-i18n="contact.form.successText">Thank you for
                             contacting Manu Ceylon Herbs. Our clinical coordinator will respond to your inquiry shortly.
                         </p>
-                        <a id="contactWhatsAppBackup" href="#" target="_blank" class="btn btn-whatsapp btn-sm">Dispatch to
+                        <a id="contactWhatsAppBackup" href="#" target="_blank" class="btn btn-whatsapp btn-sm"
+                            data-i18n="contact.form.dispatchWa">Dispatch to
                             WhatsApp</a>
                     </div>
                 </div>
@@ -1228,7 +1289,7 @@
                             style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: #ffffff; letter-spacing: 0.04em;">Manu
                             Ceylon Herbs</span>
                     </div>
-                    <p class="footer-brand-bio">Honoring the timeless therapeutic wisdom of
+                    <p class="footer-brand-bio" data-i18n="footer.brandBio">Honoring the timeless therapeutic wisdom of
                         classical
                         Sri Lankan Ayurveda. Pure
                         organic cosmetics and physician-supervised medical treatments crafted for holistic wellness.</p>
@@ -1252,37 +1313,37 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="footer-col-title">Navigation</h3>
+                    <h3 class="footer-col-title" data-i18n="footer.navTitle">Navigation</h3>
                     <ul class="footer-links-list">
-                        <li><a href="#about" class="footer-link">About Our Heritage</a></li>
-                        <li><a href="#products" class="footer-link">Herbal Cosmetics</a>
+                        <li><a href="#about" class="footer-link" data-i18n="footer.navAbout">About Our Heritage</a></li>
+                        <li><a href="#products" class="footer-link" data-i18n="footer.navProducts">Herbal Cosmetics</a>
                         </li>
-                        <li><a href="#clinic" class="footer-link">Medhini Medical
+                        <li><a href="#clinic" class="footer-link" data-i18n="footer.navClinic">Medhini Medical
                                 Center</a></li>
-                        <li><a href="#treatments" class="footer-link">Clinical
+                        <li><a href="#treatments" class="footer-link" data-i18n="footer.navTreatments">Clinical
                                 Treatments</a></li>
-                        <li><a href="#team" class="footer-link">Qualified Medical Team</a>
+                        <li><a href="#team" class="footer-link" data-i18n="footer.navTeam">Qualified Medical Team</a>
                         </li>
-                        <li><a href="#contact" class="footer-link">Location &
+                        <li><a href="#contact" class="footer-link" data-i18n="footer.navContact">Location &
                                 Directions</a></li>
                     </ul>
                 </div>
 
                 <!-- Headquarters -->
                 <div>
-                    <h3 class="footer-col-title">Manu Ceylon HQ</h3>
+                    <h3 class="footer-col-title" data-i18n="footer.hqTitle">Manu Ceylon HQ</h3>
                     <div class="footer-contact-info">
                         <div class="footer-contact-block">
-                            <strong>Address</strong>
-                            <p>Manu Ceylon Herbs PVT LTD<br>No. 12, Nagoda, Galle,
+                            <strong data-i18n="footer.hqAddressLabel">Address</strong>
+                            <p data-i18n-html="footer.hqAddressText">Manu Ceylon Herbs PVT LTD<br>No. 12, Nagoda, Galle,
                                 Sri Lanka</p>
                         </div>
                         <div class="footer-contact-block">
-                            <strong>Hotline</strong>
+                            <strong data-i18n="footer.hqHotlineLabel">Hotline</strong>
                             <p><a href="tel:+94711017868" style="color: #ffffff;">+94 71 101 7868</a></p>
                         </div>
                         <div class="footer-contact-block">
-                            <strong>Email</strong>
+                            <strong data-i18n="footer.hqEmailLabel">Email</strong>
                             <p><a href="mailto:manuceylonherbs@gmail.com"
                                     style="color: #ffffff;">manuceylonherbs@gmail.com</a></p>
                         </div>
@@ -1291,20 +1352,20 @@
 
                 <!-- Medical Center -->
                 <div>
-                    <h3 class="footer-col-title">Medhini Clinic</h3>
+                    <h3 class="footer-col-title" data-i18n="footer.clinicTitle">Medhini Clinic</h3>
                     <div class="footer-contact-info">
                         <div class="footer-contact-block">
-                            <strong>Clinic Address</strong>
-                            <p>No. 378/9D, 5th Lane, Rathnarama Road, Hokandara
+                            <strong data-i18n="footer.clinicAddressLabel">Clinic Address</strong>
+                            <p data-i18n="footer.clinicAddressText">No. 378/9D, 5th Lane, Rathnarama Road, Hokandara
                                 North 10118</p>
                         </div>
                         <div class="footer-contact-block">
-                            <strong>Appointments</strong>
+                            <strong data-i18n="footer.clinicApptLabel">Appointments</strong>
                             <p><a href="tel:+94711017868" style="color: #ffffff;">+94 71 101 7868</a></p>
                         </div>
                         <div class="footer-contact-block">
-                            <strong>Clinic Hours</strong>
-                            <p>Wed to Sun: 9:00 AM to 6:00 PM<br><span
+                            <strong data-i18n="footer.clinicHoursLabel">Clinic Hours</strong>
+                            <p data-i18n-html="footer.clinicHoursText">Wed to Sun: 9:00 AM to 6:00 PM<br><span
                                     style="color: #f87171;">Mon &amp; Tue: Closed</span></p>
                         </div>
                     </div>
@@ -1313,8 +1374,8 @@
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p>Copyright © 2024 Manu Ceylon Herbs (PVT) LTD. All Rights Reserved.</p>
-                <p>Essence of Ceylon • Ancient Ayurvedic Wisdom</p>
+                <p data-i18n="footer.copyright">Copyright © 2024 Manu Ceylon Herbs (PVT) LTD. All Rights Reserved.</p>
+                <p data-i18n="footer.tagline">Essence of Ceylon • Ancient Ayurvedic Wisdom</p>
             </div>
         </div>
     </footer>
@@ -1326,7 +1387,7 @@
             <path
                 d="M20.52 3.48A11.9 11.9 0 0 0 12.02 0C5.4 0 .04 5.36.04 11.98c0 2.11.55 4.17 1.6 5.99L0 24l6.19-1.62a11.9 11.9 0 0 0 5.83 1.51h.01c6.62 0 11.98-5.36 11.98-11.98 0-3.2-1.25-6.21-3.49-8.43zM12.02 21.9c-1.79 0-3.55-.48-5.09-1.4l-.36-.22-3.78.99 1.01-3.68-.24-.38a9.92 9.92 0 0 1-1.52-5.23c0-5.5 4.48-9.98 9.98-9.98 2.66 0 5.17 1.04 7.05 2.92a9.93 9.93 0 0 1 2.93 7.06c0 5.5-4.48 9.98-9.98 9.98zm5.47-7.48c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15s-.78.98-.95 1.18c-.18.2-.35.23-.65.08s-1.27-.47-2.42-1.5c-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z" />
         </svg>
-        <span>Need guidance? Chat with us</span>
+        <span data-i18n="floating.waText">Need guidance? Chat with us</span>
     </a>
 
     <!-- Product Quick View Modal -->
@@ -1358,18 +1419,20 @@
                             style="font-size: 0.9375rem; line-height: 1.6; color: var(--color-text-muted); margin-bottom: 1.25rem;">
                             Description</p>
 
-                        <p style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); margin-bottom: 0.5rem;">
+                        <p style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); margin-bottom: 0.5rem;"
+                            data-i18n="qv.keyBenefits">
                             Key Benefits</p>
                         <ul id="qvBenefits" style="margin-bottom: 1.25rem;"></ul>
 
-                        <p style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); margin-bottom: 0.35rem;">
+                        <p style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-primary); margin-bottom: 0.35rem;"
+                            data-i18n="qv.howToUse">
                             How to Use</p>
                         <p id="qvUsage"
                             style="font-size: 0.875rem; line-height: 1.55; color: var(--color-text-muted); margin-bottom: 1.5rem; background-color: var(--color-bg-warm); padding: 0.75rem; border-radius: var(--radius-sm);">
                         </p>
 
                         <a id="qvWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-whatsapp" style="width: 100%;">
+                            class="btn btn-whatsapp" style="width: 100%;" data-i18n="qv.inquireOrder">
                             Inquire & Order on WhatsApp
                         </a>
                     </div>
@@ -1388,64 +1451,70 @@
                 </svg>
             </button>
             <div class="modal-body">
-                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;">
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;"
+                    data-i18n="booking.title">
                     Medhini Clinic Appointment</h3>
-                <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.75rem;">
+                <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.75rem;"
+                    data-i18n="booking.sub">
                     Consult with our
                     qualified Ayurvedic doctors at Hokandara North.</p>
 
                 <form id="appointmentBookingForm">
                     <div class="form-group">
-                        <label for="bookName" class="form-label">Patient Name *</label>
-                        <input type="text" id="bookName" class="form-input" placeholder="Your full name" required>
+                        <label for="bookName" class="form-label" data-i18n="booking.nameLabel">Patient Name *</label>
+                        <input type="text" id="bookName" class="form-input" placeholder="Your full name"
+                            data-i18n-placeholder="booking.namePlaceholder" required>
                     </div>
                     <div class="form-group">
-                        <label for="bookPhone" class="form-label">Phone Number *</label>
-                        <input type="tel" id="bookPhone" class="form-input" placeholder="07X XXX XXXX" required>
+                        <label for="bookPhone" class="form-label" data-i18n="booking.phoneLabel">Phone Number *</label>
+                        <input type="tel" id="bookPhone" class="form-input" placeholder="07X XXX XXXX"
+                            data-i18n-placeholder="booking.phonePlaceholder" required>
                     </div>
                     <div class="form-group">
-                        <label for="bookTreatmentSelect" class="form-label">Select
+                        <label for="bookTreatmentSelect" class="form-label" data-i18n="booking.treatmentLabel">Select
                             Treatment /
                             Condition</label>
                         <select id="bookTreatmentSelect" class="form-select">
-                            <option value="General Ayurvedic Consultation">General
+                            <option value="General Ayurvedic Consultation" data-i18n="booking.treatmentGeneral">General
                                 Ayurvedic
                                 Consultation</option>
-                            <option value="Joint Diseases & Fractures">Treatments for
+                            <option value="Joint Diseases & Fractures" data-i18n="booking.treatmentJoint">Treatments for
                                 Joint
                                 Diseases (කැඩුම් බිඳුම්)</option>
-                            <option value="Gynecology & Pediatrics">Gynecology and
+                            <option value="Gynecology & Pediatrics" data-i18n="booking.treatmentGyn">Gynecology and
                                 Pediatrics
                                 (ස්ත්‍රී සහ ළමා රෝග)</option>
-                            <option value="Diabetes, Cholesterol & Hypertension">
+                            <option value="Diabetes, Cholesterol & Hypertension" data-i18n="booking.treatmentNcd">
                                 Diabetes,
                                 Cholesterol and NCDs
                                 (දියවැඩියාව/කොලෙස්ටරෝල්)</option>
-                            <option value="Hemorrhoids & Fistula Care">Hemorrhoids
+                            <option value="Hemorrhoids & Fistula Care" data-i18n="booking.treatmentPiles">Hemorrhoids
                                 and Colorectal
                                 (අර්ශස් ප්‍රතිකාර)</option>
-                            <option value="Dermatology & Calluses">Skin Diseases and
+                            <option value="Dermatology & Calluses" data-i18n="booking.treatmentSkin">Skin Diseases and
                                 Calluses (චර්ම
                                 රෝග/ගල් තැලුම්)</option>
-                            <option value="Acupuncture & Cupping">Chinese
+                            <option value="Acupuncture & Cupping" data-i18n="booking.treatmentAcupuncture">Chinese
                                 Acupuncture &
                                 Cupping (චීන කටු ප්‍රතිකාර)</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="bookDate" class="form-label">Preferred Clinic Day
+                        <label for="bookDate" class="form-label" data-i18n="booking.dateLabel">Preferred Clinic Day
                             *</label>
                         <input type="date" id="bookDate" class="form-input" required>
                         <span
-                            style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-top: 0.25rem;">Note:
+                            style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-top: 0.25rem;"
+                            data-i18n="booking.dateNote">Note:
                             Clinic days are Wednesday to Sunday (9:00 AM to 6:00 PM). Monday and Tuesday closed.</span>
                     </div>
                     <div class="form-group">
-                        <label for="bookNotes" class="form-label">Brief Condition Notes
+                        <label for="bookNotes" class="form-label" data-i18n="booking.notesLabel">Brief Condition Notes
                             (Optional)</label>
-                        <textarea id="bookNotes" class="form-textarea" placeholder="Symptoms or previous treatments..." rows="3"></textarea>
+                        <textarea id="bookNotes" class="form-textarea" placeholder="Symptoms or previous treatments..."
+                            data-i18n-placeholder="booking.notesPlaceholder" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="booking.submit">
                         Confirm & Send Appointment Request
                     </button>
                 </form>
@@ -1458,18 +1527,22 @@
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
                     </div>
-                    <h4 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;">
+                    <h4 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem;"
+                        data-i18n="booking.successTitle">
                         Appointment Requested</h4>
-                    <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Click below to send the
+                    <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1.5rem;"
+                        data-i18n="booking.successText">Click below to send the
                         details directly to our clinical WhatsApp line for immediate confirmation.</p>
                     <a id="sendBookingWhatsApp" href="#" target="_blank" rel="noopener noreferrer"
-                        class="btn btn-whatsapp" style="width: 100%;">
+                        class="btn btn-whatsapp" style="width: 100%;" data-i18n="booking.openWa">
                         Open WhatsApp to Confirm Booking
                     </a>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="translations.js"></script>
     <script src="app.js"></script>
 </body>
 
