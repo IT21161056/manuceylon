@@ -426,14 +426,11 @@ function initClinicStatus() {
   const currentTimeDec = hours + minutes / 60;
 
   // Operating Schedule:
-  // Monday: Closed (Day 1)
-  // Wednesday: 9:30 AM - 6:00 PM (Day 3, 9.5 to 18)
-  // Saturday: 9:30 AM - 6:00 PM (Day 6, 9.5 to 18)
-  // Sunday: 9:30 AM - 6:00 PM (Day 0, 9.5 to 18)
-  // Other days (Tue, Thu, Fri): By Appointment / Closed for Walk-ins
+  // Monday & Tuesday: Closed (Days 1 & 2)
+  // Wednesday to Sunday: 9:00 AM - 6:00 PM (Days 3, 4, 5, 6, 0; 9.0 to 18.0)
 
-  const isOpenDay = (day === 0 || day === 3 || day === 6);
-  const isOpenTime = (currentTimeDec >= 9.5 && currentTimeDec < 18.0);
+  const isOpenDay = (day === 0 || day >= 3);
+  const isOpenTime = (currentTimeDec >= 9.0 && currentTimeDec < 18.0);
 
   let statusText = '';
   let isOpen = false;
@@ -441,16 +438,14 @@ function initClinicStatus() {
   if (isOpenDay && isOpenTime) {
     statusText = 'Clinic Open Today (Until 6:00 PM)';
     isOpen = true;
-  } else if (isOpenDay && currentTimeDec < 9.5) {
-    statusText = 'Opens Today at 9:30 AM';
+  } else if (isOpenDay && currentTimeDec < 9.0) {
+    statusText = 'Opens Today at 9:00 AM';
   } else if (day === 1) {
-    statusText = 'Closed on Mondays - Reopens Wednesday';
+    statusText = 'Closed on Mondays & Tuesdays - Reopens Wednesday';
   } else if (day === 2) {
-    statusText = 'Open Tomorrow (Wednesday 9:30 AM)';
-  } else if (day === 4 || day === 5) {
-    statusText = 'Consultations Available by Appointment (Next Clinic: Saturday)';
+    statusText = 'Open Tomorrow (Wednesday 9:00 AM)';
   } else {
-    statusText = 'Closed for the Day - Next Clinic: 9:30 AM';
+    statusText = 'Closed for the Day - Next Clinic: 9:00 AM';
   }
 
   statusBadges.forEach(badge => {

@@ -1,2 +1,24 @@
+# Dependencies & local environments
+node_modules/
+.npm/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & temp files
+*.log
+npm-debug.log*
+*.tmp
+*.temp
+
+# Agents & ide configuration
 .agents
 skills-lock.json
+
+# Development test shots & scratch artifacts
+test_*.png
+shot-*.png
+tile_candidate_*.png
+take-shots.js
